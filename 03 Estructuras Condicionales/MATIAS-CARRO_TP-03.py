@@ -173,4 +173,47 @@ elif escala >= 6 and escala < 7:
 elif escala >= 7:
     print("Extremo (puede causar graves daños a gran escala)")
 
-#
+#Escribir un programa que pregunte al usuario en cuál hemisferio se encuentra (N/S), qué mes
+#del año es y qué día es. El programa deberá utilizar esa información para imprimir por pantalla
+#si el usuario se encuentra en otoño, invierno, primavera o verano
+
+#Solicitamos el ingreso de datos al usuario
+hemisferio = str(input("Ingrese en que hemisferio se encuentra (Norte o Sur):\n"))
+mes = str(input("Ingrese el mes actual:\n"))
+dia = int(input("Ingrese que numero de dia es:\n"))
+
+#Pasamos mos string a minusculas para un manejo mas simple
+hemisferio = hemisferio.lower()
+mes = mes.lower()
+
+#comenzamos separando por hemisferio, comenzamos por norte
+if hemisferio == "norte":
+    match mes: #hacemos un match de mes a mes
+        case "enero" | "febrero": #enero y febrero cualquier dia es invierno 
+            print("Usted se encuentra en Invierno")
+        case "marzo": 
+            if dia <= 20: #hasta el 20 de marzo es invierno
+                print("Usted se encuentra en Invierno")
+            elif dia >= 21: #desde el 21 de marzo es primavera
+                print("Usted se encuentra en Primavera")
+        case "abril" | "mayo": #abril y mayo cualquier dia es primavera
+            print("Usted se encuentra en Primavera")
+        case "junio": 
+            if dia <= 20: #hasta el 20 de junio es primavera
+                print("Usted se encuentra en Primavera")
+            elif dia >= 21: #desde el 21 de junio es verano
+                print("Usted se encuentra en Verano")
+        case "julio" | "agosto": #julio y agosto cualquier dia es verano
+            print("Usted se encuentra en Verano")
+        case "septiembre":
+            if dia <= 20: #hasta el 20 de septiembre es verano
+                print("Usted se encuentra en Verano")
+            elif dia >= 21: #Desde el 21 de septiembre es otoño
+                print("Usted se encuentra en Otoño")
+        case "octubre" | "noviembre": #octubre y noviembre cualquier dia es otoño
+            print("Usted se encuentra en Otoño")
+        case "diciembre":
+            if dia <= 20: #hasta el 20 de diciembre es otoño
+                print("Usted se encuentra en Otoño")
+            elif dia >= 21: #Desde el 21 de diciembre es invierno
+                print("Usted se encuentra en Invierno")
