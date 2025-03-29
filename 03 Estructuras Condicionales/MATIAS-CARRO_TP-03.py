@@ -86,13 +86,10 @@ numeros_aleatorios = [random.randint(1, 100) for i in range(50)]
 
 #Utilizamos la funcion mode para calcular la moda
 moda = float(mode(numeros_aleatorios))
-
 #Utilizamos la funcion median para calcular la mediana
 mediana = float(median(numeros_aleatorios))
-
 #utilizamos la funcion mean para calular la media
 media = float(mean(numeros_aleatorios))
-
 
 #Realizamos las condiciones para calcular los sesgos e imprimir en pantalla el resultado
 if media > mediana and mediana > moda: #condicion sesgo positivo
@@ -101,6 +98,24 @@ elif media < mediana and mediana < moda: #condicion sesgo negativo
     print("Hay un sesgo negativo en la lista de numeros")
 elif media == mediana and mediana == moda: #condicion sin sesgo
     print("No hay un sesgo en la lista de numeros")
+
+#Ejercicio 7
+#Escribir un programa que solicite una frase o palabra al usuario. Si el string ingresado
+#termina con vocal, añadir un signo de exclamación al final e imprimir el string resultante por
+#pantalla; en caso contrario, dejar el string tal cual lo ingresó el usuario e imprimirlo por
+#pantalla.
+
+palabra = str(input("Ingrese una frase o palabra:\n")) #se solicita ingreso
+#pasamos a minusculas a palabra o frase
+palabra_minusculas = str(palabra.lower())
+#Creamos una lista con todas las vocales, para poder comparar mas facilmente
+vocales = ["a", "á", "e", "é", "i", "í", "o", "ó", "u", "ú"]
+
+#realizamos la condicion donde se compara la ultima posicion del str ingresado con la lista de vocales
+if palabra_minusculas[-1] in vocales:
+    print(f"{palabra}!") #si termina en una vocal, se agrega ! al final
+else:
+    print(palabra) #si no, termina en una consonante, por lo tanto no se agrega nada 
 
 
 
