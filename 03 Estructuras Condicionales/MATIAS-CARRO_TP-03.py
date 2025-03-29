@@ -118,5 +118,30 @@ else:
     print(palabra) #si no, termina en una consonante, por lo tanto no se agrega nada 
 
 
+#Ejercicio 8
+#Escribir un programa que solicite al usuario que ingrese su nombre y el número 1, 2 o 3
+#dependiendo de la opción que desee:
+#1. Si quiere su nombre en mayúsculas. Por ejemplo: PEDRO.
+#2. Si quiere su nombre en minúsculas. Por ejemplo: pedro.
+#3. Si quiere su nombre con la primera letra mayúscula. Por ejemplo: Pedro.
+#El programa debe transformar el nombre ingresado de acuerdo a la opción seleccionada por el
+#usuario e imprimir el resultado por pantalla. Nota: investigue uso de las funciones upper(),
+#lower() y title() de Python para convertir entre mayúsculas y minúsculas.
+
+nombre = str(input("Ingrese su nombre:\n")) #se solicita ingreso
+#Se informa al usuario el funcionamiento del programa
+print("Seleccion una opcion: ")
+print("Ingrese 1 si quiere su nombre en mayúsculas")
+print("Ingrese 2 si quiere su nombre en minúsculas.")
+print("Ingrese 3 si quiere su nombre con la primera letra mayúscula")
+num = int(input("Ingrese 1, 2 o 3: \n")) #Se solicita que ingrese la opcion
+
+if num == 1:
+    print(nombre.upper()) #la funcion upper convierter el string a mayusculas
+elif num == 2:
+    print(nombre.lower()) #la funcion lower convierte el string a minusculas
+elif num == 3:
+    print(nombre.title()) #la funcion title cambia la primer letra de cada palabra del string a mayusculas
+
 
 
