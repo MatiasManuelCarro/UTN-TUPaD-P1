@@ -173,6 +173,7 @@ elif escala >= 6 and escala < 7:
 elif escala >= 7:
     print("Extremo (puede causar graves daños a gran escala)")
 
+#Ejericio 10
 #Escribir un programa que pregunte al usuario en cuál hemisferio se encuentra (N/S), qué mes
 #del año es y qué día es. El programa deberá utilizar esa información para imprimir por pantalla
 #si el usuario se encuentra en otoño, invierno, primavera o verano
