@@ -186,7 +186,7 @@ dia = int(input("Ingrese que numero de dia es:\n"))
 hemisferio = hemisferio.lower()
 mes = mes.lower()
 
-#comenzamos separando por hemisferio, comenzamos por norte
+#Separamos hemisferio, comenzamos por norte
 if hemisferio == "norte":
     match mes: #hacemos un match de mes a mes
         case "enero" | "febrero": #enero y febrero cualquier dia es invierno 
@@ -217,3 +217,33 @@ if hemisferio == "norte":
                 print("Usted se encuentra en Otoño")
             elif dia >= 21: #Desde el 21 de diciembre es invierno
                 print("Usted se encuentra en Invierno")
+elif hemisferio == "sur": #Arranca el match por hemisferio sur
+    match mes: #hacemos un match de mes a mes
+        case "enero" | "febrero": #enero y febrero cualquier dia es verano 
+            print("Usted se encuentra en Verano")
+        case "marzo":  
+            if dia <= 20: #hasta el 20 de marzo es verano
+                print("Usted se encuentra en Verano")
+            elif dia >= 21: #desde el 21 de marzo es otoño
+                print("Usted se encuentra en Otoño")
+        case "abril" | "mayo": #abril y mayo cualquier dia es otoño
+            print("Usted se encuentra en Otoño")
+        case "junio":
+            if dia <= 20: #hasta el 20 de junio es otoño
+                print("Usted se encuentra en Otoño")
+            elif dia >= 21: #desde el 21 de junio es invierno
+                print("Usted se encuentra en Invierno")
+        case "julio" | "agosto": #julio y agosto cualquier dia es invierno
+            print("Usted se encuentra en Invierno")
+        case "septiembre":
+            if dia <= 20: #hasta el 20 de septiembre es invierno
+                print("Usted se encuentra en Invierno")
+            elif dia >= 21: #Desde el 21 de septiembre es primavera
+                print("Usted se encuentra en Primavera")
+        case "octubre" | "noviembre": #octubre y noviembre cualquier dia es primavera
+            print("Usted se encuentra en Primavera")
+        case "diciembre":
+            if dia <= 20: #hasta el 20 de diciembre es primavera
+                print("Usted se encuentra en Primavera")
+            elif dia >= 21: #Desde el 21 de diciembre es verano
+                print("Usted se encuentra en Verano")
