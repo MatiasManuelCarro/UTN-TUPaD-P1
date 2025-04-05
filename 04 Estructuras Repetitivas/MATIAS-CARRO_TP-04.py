@@ -136,11 +136,11 @@ for i in range(ingreso): #El loop se repite hasta el valor de la variable ingres
     i += 1
     if num % 2 == 0: #Verificamos si el numero es pa
         pares += 1
-    else: #Si no, el numero es impar y se cuenta
+    else:           #Si no, el numero es impar y se cuenta
         impares +=1
-    if num > 0: #Verificamos si el numero es positivo
+    if num > 0:     #Verificamos si el numero es positivo
         positivos += 1
-    else: #si no, se cuenta como negativo
+    elif num < 0:   #si no, se cuenta como negativo
         negativos += 1
 
 
