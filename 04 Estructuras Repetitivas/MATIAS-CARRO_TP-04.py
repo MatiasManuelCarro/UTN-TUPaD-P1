@@ -48,4 +48,15 @@ for i in range(num_1+1, num_2): #el ciclo for corre desde el primer numero+1 has
     print(i)
     i += i
 
+#Ejercicio 4
+#Elabora un programa que permita al usuario ingresar números enteros y los sume en
+#secuencia. El programa debe detenerse y mostrar el total acumulado cuando el usuario ingrese
+#un 0.
 
+print("Ingrese numero enteros, el programa los sumara. Para finalizar, ingrese un 0")
+num = int(input("Ingrese un numero entero\n"))
+while num != 0:
+    sum = int(sum + num)
+    num = int(input("Ingrese otro numero entero\n"))
+
+print(f"La suma de los numeros es {sum}")
