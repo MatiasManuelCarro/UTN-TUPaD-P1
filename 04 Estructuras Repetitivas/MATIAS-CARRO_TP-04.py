@@ -171,3 +171,23 @@ for i in range(ingreso): #El loop se repite hasta el valor de la variable ingres
 
 promedio = float(sum / ingreso)
 print(f"El promedio de los numeros es: {promedio}")
+
+#Ejercicio 10
+#Escribe un programa que invierta el orden de los dígitos de un número ingresado por el
+#usuario. Ejemplo: si el usuario ingresa 547, el programa debe mostrar 745.
+
+#Inicializacion de variables
+digito = int(0)
+invertido = int(0)
+
+#Solicitamos al usuario el ingreso
+num = int(input("Ingrese un numero entero para invertirlo\n"))
+numero = int(num) #se asigna el valor num a la variable numero
+
+while numero != 0: #repetimos el loop hasta que numero sea reducido a 0
+    digito = int(numero % 10) #sacamos el ultimo digito del numero ingresado
+    numero = int(numero /10) #quitamos el ultimo digito del numero ingresado
+    invertido = int(invertido *10 + digito) 
+    #Creamos el numero invertido multiplicandolo por 10 y sumando el digito actual
+
+print(f"El numero {num} invertido es {invertido}")
