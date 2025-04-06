@@ -148,6 +148,7 @@ print(f"El resultado de la resta entre {num_1} y {num_2}: {resultados[1]}\n") #D
 print(f"El resultado de la multiplicacion entre {num_1} y {num_2}: {resultados[2]}\n") #devolvemos multiplicacion en la posicion 2
 print(f"El resultado de la division entre {num_1} y {num_2}: {resultados[3]}\n") #devolvemos division en la posicion 3
 
+
 #Ejercicio 8
 #Crear una función llamada calcular_imc(peso, altura) que reciba el
 #peso en kilogramos y la altura en metros, y devuelva el índice de
@@ -177,3 +178,48 @@ resultado = calcular_imc(peso, altura)
 
 #informamos el resultado al usuario
 print(f"Su indice de masa corporal es {resultado[0]}, su clasificacion es {resultado[1]}")
+
+
+#Ejercicio 9
+#Crear una función llamada celsius_a_fahrenheit(celsius) que reciba
+#una temperatura en grados Celsius y devuelva su equivalente en
+#Fahrenheit. Pedir al usuario la temperatura en Celsius y mostrar el
+#resultado usando la función.
+
+#creamos la funcion celsius a farenheit
+def celsius_a_fahrenheit(celsius):
+    farenheit = float(9/5 * celsius) + 32
+    return farenheit
+
+#Solicitamos ingreso al usuario   
+celsius = float(input("Ingrese una temperatura en celsius para convertirla a farenheit: \n"))
+
+#llamamos a la funcion celsius a farenheit
+farenheit = celsius_a_fahrenheit(celsius)
+
+#mostramos el resultado al usuario
+print (f"{celsius} celsius es igual a {farenheit} grados farenheit")
+
+
+#Ejercicio 10
+#Crear una función llamada calcular_promedio(a, b, c) que reciba
+#tres números como parámetros y devuelva el promedio de ellos.
+#Solicitar los números al usuario y mostrar el resultado usando esta función
+
+#creamos la funcion calcular_promedio
+def calcular_promedio(a, b, c):
+    promedio = float((a + b +c) / 3) #calculamos el promedio
+    return promedio
+
+#solicitamos ingreso de datos al usuario
+print("Ingrese 3 numeros para calcular su promedio")
+num_1 = int(input("Ingrese el primer numero\n"))
+num_2 = int(input("Ingrese el segundo numero\n"))
+num_3 = int(input("Ingrese el tercer numero\n"))
+
+#llamamos a la funcion calcular_promedio
+promedio = round(calcular_promedio(num_1, num_2, num_3), 2) #redondeamos a 2 decimales el retorno de la funcion
+
+#informamos al usuario el resultado
+print(f"El promedio entre los numeros {num_1}, {num_2} y {num_3} es {promedio}")
+
