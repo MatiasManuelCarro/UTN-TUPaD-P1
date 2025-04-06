@@ -75,4 +75,44 @@ perimetro = round(calcular_perimetro_circulo(radio), 2) #asignamos el return de 
 #informamos el resultado
 print(f"El area del circulo es: {area} \nEl perimetro del circulo es: {perimetro}")
 
+#Ejercicio 5
+
+#Crear una función llamada segundos_a_horas(segundos) que reciba
+#una cantidad de segundos como parámetro y devuelva la cantidad
+#de horas correspondientes. Solicitar al usuario los segundos y mos-
+#trar el resultado usando esta función.
+
+#Funcion segundos a horas
+def segundos_a_horas(segundos):
+    return segundos / 3600
+
+#Solicitamos ingreso al usuario
+segundos = float(input("Ingrese un tiempo en segundos para recibir la cantidad de horas a que equivale\n"))
+
+#llamamos a la funcion segundos a horas
+horas = round(segundos_a_horas(segundos), 2) #Asignamos el retorno de la funcion a la variable horas, redondeada a 2 decimales
+
+#Devolvemos el resultado al usuario
+print(f"{segundos} equivalen a {horas} horas")
+
+#Ejercicio 6
+
+#Crear una función llamada tabla_multiplicar(numero) que reciba un
+#número como parámetro y imprima la tabla de multiplicar de ese
+#número del 1 al 10. Pedir al usuario el número y llamar a la fun-
+#ción.
+
+#Creamos la funcion tabla_multiplicar
+def tabla_multiplicar(numero):
+    for i in range(1, 10): #repetimos el ciclo entre 1 y 9
+        multiplicacion = int(numero * i) #multiplicamos el numero por el valor actual de i
+        print(f"{numero} X {i} = {multiplicacion}") #imprimimos el resultado
+        i += 1 #i suma un valor mas
+
+#Solicitamos ingreso de datos al usuario
+numero = int(input("Ingrese un numero para mostar su tabla de multiplicacion\n"))
+
+#llamamos a la funcion tabla de multiplicar y mostramos el resultado
+tabla_multiplicar(numero)
+
 
