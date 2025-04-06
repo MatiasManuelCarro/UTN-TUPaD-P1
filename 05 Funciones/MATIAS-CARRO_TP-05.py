@@ -148,3 +148,32 @@ print(f"El resultado de la resta entre {num_1} y {num_2}: {resultados[1]}\n") #D
 print(f"El resultado de la multiplicacion entre {num_1} y {num_2}: {resultados[2]}\n") #devolvemos multiplicacion en la posicion 2
 print(f"El resultado de la division entre {num_1} y {num_2}: {resultados[3]}\n") #devolvemos division en la posicion 3
 
+#Ejercicio 8
+#Crear una función llamada calcular_imc(peso, altura) que reciba el
+#peso en kilogramos y la altura en metros, y devuelva el índice de
+#masa corporal (IMC). Solicitar al usuario los datos y llamar a la fun-
+#ción para mostrar el resultado con dos decimales
+
+#creamos la funcion calcular imc
+def calcular_imc(peso, altura):
+    imc = float(round(peso / (altura ** 2),1))
+    if imc < 18.5:
+        clasificacion = str("Bajo peso")
+    elif 18.5 < imc < 24.9:
+        clasificacion = str("Peso normal")
+    elif 25.0 < imc < 29.9:
+        clasificacion = str("Sobrepeso")
+    elif imc > 30:
+        clasificacion = str("Obesidad")
+    return [imc, clasificacion]
+
+#Solicitamos ingreso al usuario
+print("Ingrese su peso y altura para calcular su indice masa corporal")
+peso = float(input("Ingrese su peso en kilogramos\n"))
+altura = float(input("Ingrese su altura en metros\n"))
+
+#llamamos a la funcion calcular_imc
+resultado = calcular_imc(peso, altura)
+
+#informamos el resultado al usuario
+print(f"Su indice de masa corporal es {resultado[0]}, su clasificacion es {resultado[1]}")
