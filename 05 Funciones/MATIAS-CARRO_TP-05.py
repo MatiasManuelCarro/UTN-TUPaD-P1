@@ -49,3 +49,30 @@ residencia = str(input("Ingrese su lugar de residencia\n"))
 informacion_personal(nombre, apellido, edad, residencia)
 
 #Ejercicio 4
+#Crear dos funciones: calcular_area_circulo(radio) que reciba el radio
+#como parámetro y devuelva el área del círculo. calcular_perimetro_circulo(radio) 
+# que reciba el radio como parámetro y devuelva el perímetro del círculo. 
+# Solicitar el radio al usuario y llamar ambas funciones para mostrar los resultados 
+
+# Importar libreria "math" para usar pi
+import math 
+
+#Creamos la funcion para calcular el area
+def calcular_area_circulo(radio):
+    return math.pi * radio**2
+
+#funcion para calcular perimetro
+def calcular_perimetro_circulo(radio):
+    return 2 * math.pi * radio
+
+#Solicitamos ingreso de datos al usuario
+radio = float(input("Ingrese el radio del circulo para calcular su area y perimetro\n"))
+
+#llamamos a las funciones, asignamos el return de cada una a una variable
+area = round(calcular_area_circulo(radio), 2) #asignamos el return de la funcion a area, ademas redondeamos a 2 decimales
+perimetro = round(calcular_perimetro_circulo(radio), 2) #asignamos el return de la funcion a perimetro, ademas redondeamos a 2 decimales
+
+#informamos el resultado
+print(f"El area del circulo es: {area} \nEl perimetro del circulo es: {perimetro}")
+
+
