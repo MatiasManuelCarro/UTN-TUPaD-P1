@@ -116,3 +116,35 @@ numero = int(input("Ingrese un numero para mostar su tabla de multiplicacion\n")
 tabla_multiplicar(numero)
 
 
+#Ejercicio 7
+#Crear una función llamada operaciones_basicas(a, b) que reciba
+#dos números como parámetros y devuelva una tupla con el resultdo 
+# de  sumarlos, restarlos, multiplicarlos y dividirlos. Mostrar los re-
+#sultados de forma clara.
+
+#Creamos la funcion operacion basica
+def operaciones_basica(a, b):
+    suma = int(a + b) #sumamos
+    resta = int(a - b) #restamos
+    multiplicacion = int(a * b) #multiplicacion
+    if b == 0: #verificamos que el segundo numero no sea 0
+        division = str("No es posible dividir por 0") #si es 0 devolvemos un mensaje
+    else:
+        division = float(a / b) #si no es cero, hacemos la division
+    
+    return [suma, resta, multiplicacion, division] #se devuelve los resultado en una tupla
+
+#Solicitamos ingreso al usuario
+print("Ingrese dos numeros enteros para mostar todos los resultado de las operaciones basicas entre si")
+num_1 = int(input("Ingrese el primer numero \n"))
+num_2 = int(input("Ingrese el segundo numero \n"))
+
+#llamamos a la funcion operaciones basicas
+resultados = operaciones_basica(num_1, num_2) #se almacena la lista devuelta por la funcion en la variable resultado
+
+#Devolvemos los resultados al usuario
+print(f"El resultado de la suma entre {num_1} y {num_2}: {resultados[0]}\n") #Devolvemos suma, en la posicion 0
+print(f"El resultado de la resta entre {num_1} y {num_2}: {resultados[1]}\n") #Devolvemos resta, en la posicion 1
+print(f"El resultado de la multiplicacion entre {num_1} y {num_2}: {resultados[2]}\n") #devolvemos multiplicacion en la posicion 2
+print(f"El resultado de la division entre {num_1} y {num_2}: {resultados[3]}\n") #devolvemos division en la posicion 3
+
