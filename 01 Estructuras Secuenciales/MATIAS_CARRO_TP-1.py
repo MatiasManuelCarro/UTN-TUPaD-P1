@@ -1,8 +1,10 @@
 #Trabajo practico 1: Secuenciales
 #Alumno: Matias Carro 
 
+
 #Ejercicio 1
 #Crear un programa que imprima por pantalla el mensaje: “Hola Mundo!”.
+print("EJERCICIO 1\n")
 
 print("Hola Mundo!")
 
@@ -11,6 +13,8 @@ print("Hola Mundo!")
 #el nombre ingresado. Por ejemplo: si el usuario ingresa “Marcos”, el programa debe imprimir
 #por pantalla “Hola Marcos!”. Consejo: esto será más sencillo si utilizas print(f…) para
 #realizar la impresión por pantalla.
+print("-------------")
+print("EJERCICIO 2\n")
 
 nombre = str(input("Ingrese su nombre:\n"))
 print(f"Hola {nombre}!")
@@ -21,16 +25,21 @@ print(f"Hola {nombre}!")
 #“Marcos”, “Pérez”, “30” y “Argentina”, el programa debe imprimir “Soy Marcos Pérez, tengo 30
 #años y vivo en Argentina”. Consejo: esto será más sencillo si utilizas print(f…) para realizar
 #la impresión por pantalla.
+print("-------------")
+print("EJERCICIO 3\n")
 
 nombre = str(input("Ingrese su nombre:\n"))
+apellido = str(input("Ingrese su apellido\n"))
 edad = str(input("Ingrese su edad:\n"))
 residencia = str(input("Ingrese su lugar de residencia:\n"))
-print(f"Soy {nombre} tengo {edad} Años y vivo en {residencia}")
+print(f"Soy {nombre} {apellido} tengo {edad} Años y vivo en {residencia}")
 
 
 #Ejercicio4
 #Crear un programa que pida al usuario el radio de un círculo e imprima por pantalla su área y
 #su perímetro.
+print("-------------")
+print("EJERCICIO 4\n")
 
 radio = float(input("Ingrese el radio de un circulo para calcular su area y perimetro:\n"))
 area = float(3.14 * radio**2)
@@ -42,6 +51,8 @@ print(f"El perimetro del circulo es: {perimetro}")
 #Ejercicio 5
 #Crear un programa que pida al usuario una cantidad de segundos e imprima por pantalla a
 #cuántas horas equivale.
+print("-------------")
+print("EJERCICIO 5\n")
 
 segundos = int(input("Ingrese el tiempo en segundos para calcular a cuantas horas equivale:\n"))
 horas = float(segundos / 3600)
@@ -51,85 +62,79 @@ print(f" {segundos} Segundos equivale a {horas} horas")
 #Ejercicio 6
 #Crear un programa que pida al usuario un número e imprima por pantalla la tabla de
 #multiplicar de dicho número.
+print("-------------")
+print("EJERCICIO 6\n")
 
 numero = int(input("Ingrese un numero para mostar su tabla de multiplicacion\n"))
-for i in range(10):
-    multiplicacion = int(numero * i)
-    print(f"{numero} X {i} = {multiplicacion}")
-    i = i + 1
+resultado = int(numero * 1)
+print(f"{numero} x 1 = {resultado}")
+resultado = int(numero * 2)
+print(f"{numero} x 2 = {resultado}")
+resultado = int(numero * 3)
+print(f"{numero} x 3 = {resultado}")
+resultado = int(numero * 4)
+print(f"{numero} x 4 = {resultado}")
+resultado = int(numero * 5)
+print(f"{numero} x 5 = {resultado}")
+resultado = int(numero * 6)
+print(f"{numero} x 6 = {resultado}")
+resultado = int(numero * 7)
+print(f"{numero} x 7 = {resultado}")
+resultado = int(numero * 8)
+print(f"{numero} x 8 = {resultado}")
+resultado = int(numero * 9)
+print(f"{numero} x 9 = {resultado}")
+
+#La forma mas simple de hacerlo seria con un ciclo for:
+#for i in range(10):
+#    multiplicacion = int(numero * i)
+#    print(f"{numero} X {i} = {multiplicacion}")
+#    i = i + 1
 
 #Ejercicio 7
-
 #Crear un programa que pida al usuario dos números enteros distintos del 0 y muestre por
 #pantalla el resultado de sumarlos, dividirlos, multiplicarlos y restarlos.
+print("-------------")
+print("EJERCICIO 7\n")
 
 print("Ingrese dos numeros enteros distintos de 0")
-#validamos el ingreso de los datos, verificando que no sea 0
-#creamos la funcion de validacion de datos
-def validacion_datos():
-    while True: #Repite la validacion hasta que se ingrese correctamente y salga del if
-        num = int(input("Ingrese un numero: \n"))
-        if num != 0:
-            return num
-        else: #Si el numero es 0, volvemos a solicitar el ingreso hasta que sea correcto.
-            print("Ingrese el numero nuevamente, recuerde que debe ser entero y distinto de 0")
+num1 = int(input("Ingrese un numero: \n"))
+num2 = int(input("Ingrese un numero: \n"))
 
-#llamamos a la funcion de verificacion, para realizar el ingreso de los dos numeros
-num_1 = validacion_datos()
-num_2 = validacion_datos()
+#Sumamos los numeros
+suma = num1 + num2
+print (f"la suma entre {num1} y {num2} es: {suma}")
 
-#creamos la funcion suma
-def sumar_num(x,y):
-    suma = int(x + y)
-    print(f"La suma entre {x} Y {y} es {suma}")
-
-#creamos la funcion resta
-def restar_num(x,y):
-    resta = int(x - y)
-    print(f"La resta entre {x} Y {y} es {resta}")
-
-#creamos la funcion division
-def dividir_num(x,y):
-    division = float(x / y)
-    if division.is_integer(): #verificamos si el resultado no tiene decimales, lo pasamos a entero, para poder expresarlo sin .00 al final
-        division = int(division)
-        print(f"La division entre {x} Y {y} es {division}")
-    else:
-        division = round(division, 4) #Si tiene decimales, limitamos la cantidad a 4 
-        print(f"La division entre {x} Y {y} es {division}")
-
-#creamos la funcion multiplicacion
-def multiplicar_num(x,y):
-    multiplicacion = int(x * y)
-    print(f"La mutiplicacion entre {x} Y {y} es {multiplicacion}")
-
-#llamamos a la funcion suma
-sumar_num(num_1, num_2)
-
-#verificamos si el numero es igual para no repetir la operacion de dividir
-if num_1 == num_2:
-    dividir_num(num_1, num_2)
+#dividimos los numeros
+if num2 == 0:
+    print(f"No es posible dividir {num1} por 0, No se puede dividir por 0")
 else:
-    #llamamos a la funcion division para la primer division
-    dividir_num(num_1, num_2)
-    #llamamos a la funcion division para la segunda division
-    dividir_num(num_2, num_1)
+    division = float(num1 / num2)
+    division = round(division, 2)
+    print(f"La division entre {num1} Y {num2} es {division}")
 
-#llamamos a la funcion multiplicacion
-multiplicar_num(num_1, num_2)
-
-#verificamos si el numero es igual para no repetir la operacion de restar
-if num_1 == num_2:
-    restar_num(num_1, num_2)
+if num1 == 0:
+    print(f"No es posible dividir {num2} por 0, No se puede dividir por 0")
 else:
-    #llamamos a la funcion resta para la primer resta
-    restar_num(num_1, num_2)
-    #llamamos a la funcion resta para la segunda resta
-    restar_num(num_2, num_1)
+    division = float(num2 / num1)
+    division = round(division, 2)
+    print(f"La division entre {num2} Y {num1} es {division}")
+
+#restamos los numeros
+resta = num1 - num2
+print(f"La resta entre {num1} Y {num2} es {resta}")
+resta = num2 - num1
+print(f"La resta entre {num2} Y {num1} es {resta}")
+
+#multiplicamos los numeros
+multiplicacion = int(num1 * num2)
+print(f"La mutiplicacion entre {num1} Y {num2} es {multiplicacion}")
 
 #Ejercicio 8
 #Crear un programa que pida al usuario su altura y su peso e imprima por pantalla su índice
 #de masa corporal.
+print("-------------")
+print("EJERCICIO 8\n")
 
 print("Ingrese su altura y peso para calcular su indice masa corporal")
 altura = int(input("Ingrese su altura en centimetros\n")) #Pedimos la altura en centimetros
@@ -141,6 +146,8 @@ print(f"Su indice de masa corporal es {imc}")
 #Ejercio 9
 #Crear un programa que pida al usuario una temperatura en grados Celsius e imprima por
 #pantalla su equivalente en grados Fahrenheit. Tener en cuenta la siguiente equivalencia
+print("-------------")
+print("EJERCICIO 9\n")
 
 celsius = float(input("Ingrese una temperatura en celsius para convertirla a farenheit: \n"))
 farenheit = float(9/5 * celsius) + 32
@@ -149,6 +156,8 @@ print (f"{celsius} celsius es igual a {farenheit} grados farenheit")
 #Ejercicio 10
 #Crear un programa que pida al usuario 3 números e imprima por pantalla el promedio de
 #dichos números.
+print("-------------")
+print("EJERCICIO 10\n")
 
 print("Ingrese 3 numeros para calcular su promedio")
 num_1 = int(input("Ingrese el primer numero\n"))
