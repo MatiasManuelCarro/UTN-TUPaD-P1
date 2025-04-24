@@ -83,5 +83,72 @@ for i in range(10, 31, 5):
 
 print(lista_ejercicio6)
 
+#Ejercicio 7
+
+#Reemplazar los dos valores centrales (índices 1 y 2) de la lista “autos” por dos nuevos valores
+#cualesquiera.
+
+print("Ejercicio 7")
+
+autos = ["sedan", "polo", "suran", "gol"]
+
+autos[1] = "fiesta"
+autos[2] = "cronos"
+
+#Ejercicio 8
+
+#Crear una lista vacía llamada "dobles" y agregar el doble de 5, 10 y 15 usando append
+#directamente. Imprimir la lista resultante por pantalla
+
+print("Ejercicio 8")
+
+dobles = []
+
+for i in range(5, 16, 5):
+    dobles.append(i*2)
+
+print(dobles)
+
+#Ejercicio 9
+
+#Dada la lista “compras”, cuyos elementos representan los productos comprados por
+#diferentes clientes:
+
+print("Ejercicio 9")
+
+compras = [["pan", "leche"], ["arroz", "fideos", "salsa"],["agua"]]
+
+#a-  Agregar "jugo" a la lista del tercer cliente usando append
+compras[2].append("jugo") 
+#b Reemplazar "fideos" por "tallarines" en la lista del segundo cliente.
+compras[1][1] = "tallarines"
+#c- Eliminar "pan" de la lista del primer cliente.
+del compras[0][0]
+
+#d- Imprimir la lista resultante por pantalla
+print(compras)
+
+#Ejercicio 10
+
+# Elaborar una lista anidada llamada “lista_anidada” que contenga los siguientes elementos:
+
+#Posición lista_anidada[0]: 15
+# Posición lista_anidada[1]: True
+# Posición lista_anidada[2][0]: 25.5
+# Posición lista_anidada[2][1]: 57.9
+# Posición lista_anidada[2][2]: 30.6
+# Posición lista_anidada[3]: False
+#Imprimir la lista resultante por pantalla.
+
+print("Ejercicio 10")
+
+lista_anidada = [[], [], [], []]
+lista_anidada[0].append(15)
+lista_anidada[1].append(True)
+lista_anidada[2].append(25.5)
+lista_anidada[2].append(57.9)
+lista_anidada[2].append(30.6)
+lista_anidada[3].append(False)
 
 
+print(lista_anidada)

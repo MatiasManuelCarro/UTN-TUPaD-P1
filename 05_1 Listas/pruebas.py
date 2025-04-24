@@ -1,8 +1,12 @@
-print("Ejercicio 6")
+print("Ejercicio 10")
 
-lista_ejercicio6 = []
+lista_anidada = [[], [], [], []]
+lista_anidada[0].append(15)
+lista_anidada[1].append(True)
+lista_anidada[2].append(25.5)
+lista_anidada[2].append(57.9)
+lista_anidada[2].append(30.6)
+lista_anidada[3].append(False)
 
-for i in range(10, 31, 5):
-    lista_ejercicio6.append(i)
 
-print(lista_ejercicio6)
+print(lista_anidada)
