@@ -8,9 +8,7 @@
 print("Ejercicio 1")
 lista_numero = []
 
-for i in range(1, 101):
-    if (i % 4) == 0:
-        lista_numero.append(i)
+lista_numero = list(range(4, 101, 4)) #Utilizamos range para crear los numeros del 1 al 100 que sean multiplos de 4
 
 print(lista_numero)
 
@@ -81,8 +79,7 @@ print(f"\nEjercicio 6")
 
 lista_ejercicio6 = []
 
-for i in range(10, 31, 5):
-    lista_ejercicio6.append(i)
+lista_ejercicio6= list(range(10, 31, 5))
 
 print(lista_ejercicio6)
 print(f"Primeros dos numeros de la lista: {lista_ejercicio6[:2]}") #[:2] muestra desde el indice 0 al 1
