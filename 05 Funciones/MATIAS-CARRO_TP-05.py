@@ -6,6 +6,7 @@
 #pantalla el mensaje: “Hola Mundo!”. Llamar a esta función desde el
 #programa principal.
 
+print("\nEjercicio 1\n")
 #Funcion que imprime hola mundo
 def imprimir_hola_mundo():
     print("Hola Mundo!")
@@ -20,6 +21,7 @@ imprimir_hola_mundo()
 #volver: “Hola Marcos!”. Llamar a esta función desde el programa
 #principal solicitando el nombre al usuario.
 
+print("\nEjercicio 2\n")
 #funcion que saluda al usuario
 def saludar_usuario(nombre):
     print(f"Hola {nombre}!")
@@ -35,6 +37,7 @@ saludar_usuario(usuario)
 #dir los datos al usuario y llamar a esta función con los valores in-
 #gresados.
 
+print("\nEjercicio 3\n")
 #Funcion informacion personal
 def informacion_personal(nombre, apellido, edad, residencia):
     print(f"Soy {nombre} {apellido}, tengo {edad} años y vivo en {residencia}")
@@ -54,6 +57,7 @@ informacion_personal(nombre, apellido, edad, residencia)
 # que reciba el radio como parámetro y devuelva el perímetro del círculo. 
 # Solicitar el radio al usuario y llamar ambas funciones para mostrar los resultados 
 
+print("\nEjercicio 4\n")
 # Importar libreria "math" para usar pi
 import math 
 
@@ -82,6 +86,7 @@ print(f"El area del circulo es: {area} \nEl perimetro del circulo es: {perimetro
 #de horas correspondientes. Solicitar al usuario los segundos y mos-
 #trar el resultado usando esta función.
 
+print("\nEjercicio 5\n")
 #Funcion segundos a horas
 def segundos_a_horas(segundos):
     return segundos / 3600
@@ -102,6 +107,7 @@ print(f"{segundos} equivalen a {horas} horas")
 #número del 1 al 10. Pedir al usuario el número y llamar a la fun-
 #ción.
 
+print("\nEjercicio 6\n")
 #Creamos la funcion tabla_multiplicar
 def tabla_multiplicar(numero):
     for i in range(1, 10): #repetimos el ciclo entre 1 y 9
@@ -122,6 +128,7 @@ tabla_multiplicar(numero)
 # de  sumarlos, restarlos, multiplicarlos y dividirlos. Mostrar los re-
 #sultados de forma clara.
 
+print("\nEjercicio 7\n")
 #Creamos la funcion operacion basica
 def operaciones_basica(a, b):
     suma = int(a + b) #sumamos
@@ -155,6 +162,7 @@ print(f"El resultado de la division entre {num_1} y {num_2}: {resultados[3]}\n")
 #masa corporal (IMC). Solicitar al usuario los datos y llamar a la fun-
 #ción para mostrar el resultado con dos decimales
 
+print("\nEjercicio 8\n")
 #creamos la funcion calcular imc
 def calcular_imc(peso, altura):
     imc = float(round(peso / (altura ** 2),1))
@@ -186,6 +194,7 @@ print(f"Su indice de masa corporal es {resultado[0]}, su clasificacion es {resul
 #Fahrenheit. Pedir al usuario la temperatura en Celsius y mostrar el
 #resultado usando la función.
 
+print("\nEjercicio 9\n")
 #creamos la funcion celsius a farenheit
 def celsius_a_fahrenheit(celsius):
     farenheit = float(9/5 * celsius) + 32
@@ -206,6 +215,7 @@ print (f"{celsius} celsius es igual a {farenheit} grados farenheit")
 #tres números como parámetros y devuelva el promedio de ellos.
 #Solicitar los números al usuario y mostrar el resultado usando esta función
 
+print("\nEjercicio 10\n")
 #creamos la funcion calcular_promedio
 def calcular_promedio(a, b, c):
     promedio = float((a + b +c) / 3) #calculamos el promedio
