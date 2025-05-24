@@ -21,8 +21,10 @@ def validacion_datos(numero_ingresado): #Valida que el numero ingresado sea un e
             if numero > 0 and numero < 999: #verifica que el entero sea positivo y menor a 999 si no lo es, vuelve a pedir ingreso de datos
                 return numero #si es entero, positivo, y menor a 999, devuelve el numero
             else:
+                print("\nDatos ingresados incorrectos")
                 numero_ingresado = input("Ingrese otro numero, recuerde que tiene que ser un entero positivo menor a 999:\n") #volvemos a pedir ingreso
         except ValueError: #en caso de error, el ingreso no era correcto. Tenia otros caracteres o era decimal
+            print("\nDatos ingresados incorrectos")
             numero_ingresado = input("Ingrese otro numero, recuerde que tiene que ser un entero positivo menor a 999:\n") #volvemos a pedir ingreso
         
 print("Programa que muestra el factorial de un numero ingresado, ademas de todos los factoriales entre ese numero y 1")
@@ -61,8 +63,10 @@ def validacion_datos(numero_ingresado):                                 #Valida 
             if posicion > 0: #verifica que el entero sea positivo 
                 return posicion #si es entero y positivo devuelve el numero
             else:
+                print("\nDatos ingresados incorrectos")
                 numero_ingresado = input("Ingrese otro numero, recuerde que tiene que ser un entero positivo menor a 999:\n") #volvemos a pedir ingreso
         except ValueError: #en caso de error, el ingreso no era correcto. Tenia otros caracteres o era decimal
+            print("\nDatos ingresados incorrectos")
             numero_ingresado = input("Ingrese otro numero, recuerde que tiene que ser un entero positivo menor a 999:\n") #volvemos a pedir ingreso
 
 print("Programa que muestra el valor de la posicion en una secuencia de fibonacci")
@@ -98,7 +102,8 @@ def validacion_datos(base_ingreso, exponente_ingreso): #Valida que los numeros i
             if base > 0 and exponente > 0: #verifica que sean positivos
                 return base, exponente 
         except ValueError: #en caso de error, el ingreso no era correcto. Tenia otros caracteres o era decimal 
-            print("\nIngrese otros numeros, recuende que deben ser enteros y positivo :\n")
+            print("\nDatos ingresados incorrectos")
+            print("\nIngrese otros numeros, recuende que deben ser enteros y positivo\n")
             base_ingreso = input("Ingrese un numero entero positivo para la base:\n") #volvemos a pedir ingreso
             exponente_ingreso = input("Ingrese un numero entero positivo para el exponente:\n")
 
@@ -140,8 +145,10 @@ def validacion_datos(numero_ingresado): #Valida que el numero ingresado sea un e
             if numero_decimal > 0: #verifica que el entero sea positivo si no lo es, vuelve a pedir ingreso de datos
                 return numero_decimal #si es entero, positivo, y menor a 999, devuelve el numero
             else:
+                print("\nDatos ingresados incorrectos")
                 numero_ingresado = input("Ingrese otro numero, recuerde que tiene que ser un entero positivo:\n") #volvemos a pedir ingreso
         except ValueError: #en caso de error, el ingreso no era correcto. Tenia otros caracteres o era decimal
+            print("\nDatos ingresados incorrectos")
             numero_ingresado = input("Ingrese otro numero, recuerde que tiene que ser un entero positvo:\n") #volvemos a pedir ingreso
 
 #pedimos los datos al usuraio
@@ -201,3 +208,127 @@ if palindromo == True:
     print(f"{palabra_original} es un palindromo")
 else:
     print(f"{palabra_original} NO es un palindromo")
+
+#Ejercicio 6
+
+print("\nEjercicio 6\n")
+
+#Escribí una función recursiva en Python llamada suma_digitos(n) que reciba un
+#número entero positivo y devuelva la suma de todos sus dígitos
+
+#funcion recursiva que suma todos los digitos de un numero
+def suma_digitos(numero):
+    if numero < 10: # la condicion de corte es que el numero quede en un solo digito 
+        return numero
+    #devuelve la suma de numero % 10 (el ultimo numero) + numero // 10 (reduce el numero en una cifra, esto comienza la recursividad)
+    return suma_digitos(numero % 10) + suma_digitos(numero // 10)
+
+def ingreso_datos(): #Valida que el numero ingresado sea un entero positivo
+    numero_ingresado = input("Ingrese un numero entero positivo para mostrar la suma de sus cifras\n")
+    while True: #Se repite el loop hasta que la funcion retorne el numero
+        try: #intenta pasar el ingreso a un integer
+            numero = int(numero_ingresado) #si es integer, se guarda en la variable numero
+            if numero > 0: #verifica que el entero sea positivo, si no lo es, vuelve a pedir ingreso de datos
+                return numero, numero_ingresado #si es entero positivo devuelve el numero
+            else:
+                print("\nDatos ingresados incorrectos")
+                numero_ingresado = input("Ingrese otro numero, recuerde que tiene que ser un entero positivo:\n") #volvemos a pedir ingreso
+        except ValueError: #en caso de error, el ingreso no era correcto. Tenia otros caracteres o era decimal
+            print("\nDatos ingresados incorrectos")
+            numero_ingresado = input("Ingrese otro numero, recuerde que tiene que ser un entero positivo:\n") #volvemos a pedir ingreso
+
+
+#pedimos ingreso de datos
+numero, numero_ingresado = ingreso_datos()
+#llamamos a la funcion recursiva
+suma = suma_digitos(numero)
+
+#se muestra el resultado
+print (f"La suma de los digitos de {numero_ingresado} es: {suma}")
+
+#Ejercicio 7
+
+#Un niño está construyendo una pirámide con bloques. En el nivel más bajo coloca n
+#bloques, en el siguiente nivel uno menos (n - 1), y así sucesivamente hasta llegar al
+#último nivel con un solo bloque.
+#Escribí una función recursiva contar_bloques(n) que reciba el número de bloques en el
+#nivel más bajo y devuelva el total de bloques que necesita para construir toda la
+#pirámide.
+
+print("\n Ejercicio 7\n")
+print("Ingrese la cantidad de bloques que tiene una piramide en su base, se sumara el total de bloques de la piramide")
+
+#funcion recursiva que devuelve la cantidad de bloques de la piramide
+def contar_bloques(numero_bloques):
+    if numero_bloques == 2:         #condicion de frenado al ser 2, sabemos que queda un solo piso mas con 1
+        return numero_bloques + 1       #se suma el ultimo bloque y se evita una iteracion extra
+    #retorno recursivo, resta un bloque por cada capa de la piramide
+    return contar_bloques(numero_bloques-1) + numero_bloques
+
+def ingreso_datos():        #Valida que el numero ingresado sea un entero positivo
+    numero_bloques = input("Ingrese la cantidad de bloques de la base de la piramide\n")
+    while True:         #Se repite el loop hasta que la funcion retorne el numero
+        try:        #intenta pasar el ingreso a un integer
+            numero_bloques = int(numero_bloques)        #si es integer, se guarda en la variable numero
+            if numero_bloques > 0:      #verifica que el entero sea positivo, si no lo es, vuelve a pedir ingreso de datos
+                return numero_bloques       #si es entero positivo devuelve el numero
+            else:
+                print("\nDatos ingresados incorrectos")
+                numero_bloques = input("Ingrese otro numero, recuerde que tiene que ser un entero positivo:\n")         #volvemos a pedir ingreso
+        except ValueError:      #en caso de error, el ingreso no era correcto. Tenia otros caracteres o era decimal
+            print("\nDatos ingresados incorrectos")
+            numero_bloques = input("Ingrese otro numero, recuerde que tiene que ser un entero positivo:\n")         #volvemos a pedir ingreso
+
+
+numero_bloques = ingreso_datos()
+cantidad_total_bloques = contar_bloques(numero_bloques)
+
+print(f"Una piramide con {numero_bloques} bloques en la base, tiene {cantidad_total_bloques} bloques en total")
+
+print("\n Ejercicio 8\n")
+print("Programa donde se ingresa un numero y un digito \n luego se muestra cuantas veces ese digito se encuentra dentro de este numero")
+
+#Escribí una función recursiva llamada contar_digito(numero, digito) que reciba un
+#número entero positivo (numero) y un dígito (entre 0 y 9), y devuelva cuántas veces
+#aparece ese dígito dentro del número.
+
+#funcion recursiva que cuenta la cantidad de veces que esta un digito en un numero ingresado
+def contar_digito(numero, digito,):
+    #condicion de corte, si el numero es menor a 10 (un solo digito)
+    if numero < 10:
+        #devolvemos 1 SI el numero es igual al digito, sino, devolvemos 0
+        return 1 if numero == digito else 0
+    #llamada a la funcion recursiva
+    #devuelve 1 si el ultimo numero del numero ingresado es igual al digito + el numero // 10
+    #numero // 10 quita el ultimo numero del numero ingresado, se repite hasta que quede un solo digito
+    return (1 if numero % 10 == digito else 0) + contar_digito(numero//10, digito)
+
+def ingreso_datos():        #Valida el ingreso de los datos, que sean enteros positivos
+    numero = input("Ingrese un numero entero positivo\n")
+    digito = input("Ingrese un solo digito para buscar cuantas veces esta en el numero ingresado\n")
+    while True:         #Se repite el loop hasta que la funcion retorne el numero
+        try:        #intenta pasar el ingreso a un integer
+            numero = int(numero)        #si es integer, se guarda en la variable numero
+            digito = int(digito)
+            if numero > 0 and digito < 10:      #verifica que el entero sea positivo y digito un solo numero
+                return numero, digito         #si es entero positivo devuelve el numero
+            else:
+                print("\nDatos ingresados incorrectos")
+                numero = input("Ingrese otro numero, recuerde que tiene que ser un entero positivo:\n")       #volvemos a pedir ingreso
+                digito = input("Ingrese un digito, recuerde que tiene que ser un solo numero")
+        except ValueError:      #en caso de error, el ingreso no era correcto. Tenia otros caracteres o era decimal
+            print("\nDatos ingresados incorrectos")
+            numero = input("Ingrese otro numero, recuerde que tiene que ser un entero positivo:\n")       #volvemos a pedir ingreso
+            digito = input("Ingrese un digito, recuerde que tiene que ser un solo numero")
+
+#ingreso de datos
+numero, digito = ingreso_datos()
+
+#llamada a la funcion recursiva
+digito_repeticiones = contar_digito(numero, digito)
+
+#salida de datos
+if digito_repeticiones == 1 and digito_repeticiones != 0:
+    print(f"En el numero {numero} el digito {digito} se encuentra: {digito_repeticiones} vez")
+else:
+    print(f"En el numero {numero} el digito {digito} se encuentra: {digito_repeticiones} veces")
