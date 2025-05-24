@@ -285,12 +285,14 @@ cantidad_total_bloques = contar_bloques(numero_bloques)
 
 print(f"Una piramide con {numero_bloques} bloques en la base, tiene {cantidad_total_bloques} bloques en total")
 
-print("\n Ejercicio 8\n")
-print("Programa donde se ingresa un numero y un digito \n luego se muestra cuantas veces ese digito se encuentra dentro de este numero")
 
+#Ejercicio 8
 #Escribí una función recursiva llamada contar_digito(numero, digito) que reciba un
 #número entero positivo (numero) y un dígito (entre 0 y 9), y devuelva cuántas veces
 #aparece ese dígito dentro del número.
+
+print("\n Ejercicio 8\n")
+print("Programa donde se ingresa un numero y un digito \n luego se muestra cuantas veces ese digito se encuentra dentro de este numero")
 
 #funcion recursiva que cuenta la cantidad de veces que esta un digito en un numero ingresado
 def contar_digito(numero, digito,):
