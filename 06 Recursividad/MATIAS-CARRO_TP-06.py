@@ -60,17 +60,17 @@ def validacion_datos(numero_ingresado):                                 #Valida 
     while True: #Se repite el loop hasta que la funcion retorne el numero
         try: #intenta pasar el ingreso a un integer
             posicion = int(numero_ingresado) #si es integer, se guarda en la variable numero
-            if posicion > 0: #verifica que el entero sea positivo 
+            if posicion > 0 and posicion <= 35: #verifica que el entero sea positivo y maximo 35
                 return posicion #si es entero y positivo devuelve el numero
             else:
                 print("\nDatos ingresados incorrectos")
-                numero_ingresado = input("Ingrese otro numero, recuerde que tiene que ser un entero positivo menor a 999:\n") #volvemos a pedir ingreso
+                numero_ingresado = input("Ingrese otro numero, recuerde que tiene que ser un entero positivo menor o igual a 35:\n") #volvemos a pedir ingreso
         except ValueError: #en caso de error, el ingreso no era correcto. Tenia otros caracteres o era decimal
             print("\nDatos ingresados incorrectos")
-            numero_ingresado = input("Ingrese otro numero, recuerde que tiene que ser un entero positivo menor a 999:\n") #volvemos a pedir ingreso
+            numero_ingresado = input("Ingrese otro numero, recuerde que tiene que ser un entero positivo menor o igual a 35:\n") #volvemos a pedir ingreso
 
 print("Programa que muestra el valor de la posicion en una secuencia de fibonacci")
-numero_ingresado = input("ingrese posicion") #dato ingresado por el usuario, falta validar si el ingreso es correcto
+numero_ingresado = input("ingrese posicion (maximo 35)") #dato ingresado por el usuario, falta validar si el ingreso es correcto
 posicion = validacion_datos(numero_ingresado) #se valida el ingreso y se devuelve a la variable posicion
 fibonacci = funcion_fibonacci_recursiva(posicion) #se busca el valor de esa posicion en la secuencia 
 
@@ -99,18 +99,18 @@ def validacion_datos(base_ingreso, exponente_ingreso): #Valida que los numeros i
         try: #intenta pasar los ingresos a un integer
             base = int(base_ingreso) #si es integer, se guarda en la variable numero
             exponente = int(exponente_ingreso)
-            if base > 0 and exponente > 0: #verifica que sean positivos
+            if base > 0 and exponente > 0 and base < 999 and exponente < 999: #verifica que sean positivos
                 return base, exponente 
         except ValueError: #en caso de error, el ingreso no era correcto. Tenia otros caracteres o era decimal 
             print("\nDatos ingresados incorrectos")
-            print("\nIngrese otros numeros, recuende que deben ser enteros y positivo\n")
+            print("\nIngrese otros numeros, recuende recuerde que tiene que ser un entero positivo menor a 999:\n")
             base_ingreso = input("Ingrese un numero entero positivo para la base:\n") #volvemos a pedir ingreso
-            exponente_ingreso = input("Ingrese un numero entero positivo para el exponente:\n")
+            exponente_ingreso = input("Ingrese un numero entero positivo para el exponente\n")
 
 #solicitud de ingreso de datos
 print("Programa que calcula la potencia de un numero, ingresando la base (numero) y el exponente")
-base_ingreso = input("Ingrese un numero entero positivo para la base:\n")
-exponente_ingreso = input("Ingrese un numero entero positivo para el exponente:\n")
+base_ingreso = input("Ingrese un numero entero positivo para la base: (maximo 998)\n")
+exponente_ingreso = input("Ingrese un numero entero positivo para el exponente: (maximo 998 )\n")
 
 #se llama a la funcion de validacion de datos
 base, exponente = validacion_datos(base_ingreso, exponente_ingreso)
@@ -158,14 +158,6 @@ numero_decimal = validacion_datos(numero_ingresado) #se verifica que el ingreso 
 resultado = conversor_binario_recursivo(numero_decimal) #llamamos a la funcion recursiva para pasar a binarios 
 print(f"El numero {numero_decimal} en binario es: {resultado}")
 
-#Ejercicio 5
-
-#Implementá una función recursiva llamada es_palindromo(palabra) que reciba una
-#cadena de texto sin espacios ni tildes, y devuelva True si es un palíndromo o False si no lo es.
-#Requisitos:
-#La solución debe ser recursiva.
-#No se debe usar [::-1] ni la función reversed()
-
 print("\nEjercicio 5\n")
 
 #Lista de las vocales para reemplazar en la cadena de texto
@@ -191,7 +183,7 @@ def ingreso_de_datos():
     palabra_original = palabra #se guarda la palabra como la ingreso el usuario
     palabra = palabra.replace(" ", "") #se eliminan los espacios
     palabra = palabra.lower() #se pasa a minusculas
-    for i in range(len(vocales_con_acentos)): #ciclo for, reemplaza las vocales con acentos por vocales
+    for i in range(len(vocales_con_acentos)): #ciclo for, reemplaza las vocales con acentos por vocales sin acento
         palabra = palabra.replace(vocales_con_acentos[i], vocales_sin_acentos[i])
     
     return palabra, palabra_original

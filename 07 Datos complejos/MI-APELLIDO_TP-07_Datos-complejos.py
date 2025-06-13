@@ -86,6 +86,14 @@ if nombre_busqueda in [contacto for contacto in datos_contactos]:
 else:
     print(f"El nombre {nombre_busqueda} no se encuentra agendado")
 
+#Ejercicio 5
+#5) Solicita al usuario una frase e imprime:
+#• Las palabras únicas (usando un set).
+#• Un diccionario con la cantidad de veces que aparece cada palabra.
+
+
+
+
 
 
 
