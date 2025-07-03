@@ -167,6 +167,30 @@ for clave, valor in diccionario_notas.items():
 for clave, valor in diccionario_promedios.items():
     print(f"Promedio del alumno {clave}: {valor}\n")
 
+#Ejercicio 7
+#Dado dos sets de números, representando dos listas de estudiantes que aprobaron Parcial 1
+#y Parcial 2:
+#• Mostrá los que aprobaron ambos parciales.
+#• Mostrá los que aprobaron solo uno de los dos.
+#• Mostrá la lista total de estudiantes que aprobaron al menos un parcial (sin repetir)
+
+print ("\nEjercicio 7\n")
+
+# Listas de studiantes que aprobaron cada parcial
+parcial_1 = {10, 12, 15, 16}
+parcial_2 = {18, 15, 12, 11}
+
+# Estudiantes que aprobaron ambos parciales 
+ambos_parciales = parcial_1 & parcial_2
+print("Estudiantes que  Aprobaron ambos parciales:", ambos_parciales)
+
+#Estudiantes que aprobaron un solo parcial
+solo_un_parcial = parcial_1 ^ parcial_2
+print("Estudiantes que probaron solo uno:", solo_un_parcial)
+
+#Estudiantes que aprobaron al menos uno 
+al_menos_un_parcial = parcial_1 | parcial_2
+print("Estudiantes que aprobaron al menos un parcial:", al_menos_un_parcial)
 
 #8) Armá un diccionario donde las claves sean nombres de productos y los valores su stock.
 #Permití al usuario:
@@ -238,7 +262,64 @@ while menu != "S":
                 input("Presione enter para continuar")
                 os.system("cls")
 
+#Ejercicio 9
+#Creá una agenda donde las claves sean tuplas de (día, hora) y los valores sean eventos.
+#Ejemplo
+
+print ("\nEjercicio 9\n")
+
+#Agenda:
+agenda = {
+    ("lunes", "19:00"): "Clases Organizacion empresarial",
+    ("martes", "18:00"): "Clases Programacion",
+    ("martes", "19:00"): "Clases Arq. y Sistemas Operativos",
+    ("miercoles", "18:00"): "Clases Matematica",
+    ("miercoles", "19:00"): "Clases Organizacion empresarial",
+    ("jueves", "18:00"): "Clases Programacion",
+    ("jueves", "19:00"): "Clases Arq. y Sistemas Operativos",
+    ("verines", "20:30"): "Clases Matematica",
+}
+
+#funcion para buscar los eventos
+def consultar_evento(dia, hora):
+    clave = (dia.lower(), hora) #pasa a minusculas el dia
+    evento = agenda.get(clave) #se guarda la busqueda en evento 
+
+    if evento: #verifica que exista en la agenda, si no se informa que no hay
+        print(f"Tenes una Actividad el {dia} a las {hora}: {evento}")
+    else:
+        print(f"No tenes una actividad programada el {dia} a las {hora}.")
+
+#Ingreso del usuario
+dia = input("Ingrese el dia que que quiere ver si tiene un evento:\n")
+hora = input("Ingrese la hora para verificar si existe un evento:\n")
+consultar_evento(dia, hora)
+
+#Eventos de prueba
+consultar_evento("martes", "18:00")
+consultar_evento("miércoles", "11:00")
 
 
+#ejercicio 10
 
+#Dado un diccionario que mapea nombres de países con sus capitales, construí un nuevo
+#diccionario donde:
+#• Las capitales sean las claves.
+#• Los países sean los valores.
 
+print ("\nEjercicio 10\n")
+
+#diccionario original
+paises_capitales = {
+    "Argentina": "Buenos Aires",
+    "Brasil": "Brasilia",
+    "Chile": "Santiago",
+    "Uruguay": "Montevideo"
+}
+
+#invertimos el diccionario con list comprehension
+capitales_paises = {capital: pais for pais, capital in paises_capitales.items()}
+
+#mostramos el resultado
+print(f"Lista original:\n{paises_capitales}")
+print(f"Lista invertida:\n{capitales_paises}")
